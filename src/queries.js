@@ -1,9 +1,11 @@
-const Pool = require('pg').Pool
+const Pool = require('pg').Pool;
 //change this one to your database username and password
 const pool = new Pool({
   user: 'postgres',
-  host: 'localhost',
+  password: 'superuser',
   database: 'abalatdb',
-  password: '1234',
-  port: 5432,
-})
+  host: 'localhost',
+  port: 5432
+});
+
+module.exports=pool;
