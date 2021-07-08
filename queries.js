@@ -4,6 +4,6 @@ const pool = new Pool({
   user: 'postgres',
   host: 'localhost',
   database: 'abalatdb',
-  password: '1234',
+  password: 'superuser',
   port: 5432,
 })
