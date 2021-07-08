@@ -1,5 +1,19 @@
 const pool= require('../queries');
 
+
+const adduser = async (req, res) => {
+  try{
+      const {first_name,last_name, department, gender, muya_kifil, niseha_abat, year, school_id, phone_number} = req.body;
+      const user = await pool.query(
+          "INSERT INTO users (first_name,last_name, department, gender, muya_kifil, niseha_abat, year, school_id, phone_number) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *",
+          [first_name,last_name, department, gender, muya_kifil, niseha_abat, year, school_id, phone_number]
+      );
+      res.json(user);
+      console.log("server runing");
+  } catch (err){
+      console.error(err.message);
+  }
+};
 const getAllUsers= async(req, res) => {
     // response.json({ info: 'Node.js, Express, and Postgres API' })
     // console.log("Get working");
@@ -40,4 +54,4 @@ const deleteUser=async(req,res)=>{
     }
 };
 
-module.exports={getAllUsers,getUserById,deleteUser};
+module.exports={adduser,getAllUsers,getUserById,deleteUser};

@@ -6,7 +6,7 @@ CREATE TABLE users(
     lastName VARCHAR(255),
     gender VARCHAR(255),
     batch INTEGER,
-    phoneNumber INTEGER,
+    phoneNumber VARCHAR,
     school_id VARCHAR(255),
     department VARCHAR(255),
     nisehaAbat VARCHAR(255),
